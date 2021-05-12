@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WebApi.Service.Dto;
-
+using WebApi.Model.Dto;
 namespace WebApi.Service
 {
     public class AccountService

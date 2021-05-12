@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Model.Dto;
 using WebApi.Service;
-using WebApi.Service.Dto;
 
 namespace WebApi.Controllers
 {
