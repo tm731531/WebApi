@@ -1,36 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WebApi.Model.Dto;
 namespace WebApi.Service
 {
     public class AccountService
     {
 
-        public bool CreateAccount(CreateAccountDto createAccountDto)
+        public bool CreateAccount(string email, string phone, string password)
         {
 
             bool retrunValue = true;
-            if (createAccountDto.email.Length > 30)
+            //帶資料 去創帳號了
+            try
             {
-                retrunValue = false;
             }
-            if (!createAccountDto.phone.StartsWith("0"))
+            catch (Exception)
             {
-                retrunValue = false;
-            }
 
-            if (Check(createAccountDto.password))
+                retrunValue = false;
+            }
+            if (email == "false")
             {
                 retrunValue = false;
             }
-
             return retrunValue;
         }
 
+        public bool CheckEmail(string email)
+        {
+
+            bool retrunValue = true;
+            if (email.Length > 30)
+            {
+                retrunValue = false;
+            }
+            else
+            {
+
+            }
+            return retrunValue;
+        }
+        public bool CheckPhone(string phone)
+        {
+            bool retrunValue = true;
+            if (!phone.StartsWith("0"))
+            {
+                retrunValue = false;
+            }
+            else
+            {
+            }
+            return retrunValue;
+        }
+
+        public bool CheckPassword(string password)
+        {
+
+            bool retrunValue = false;
+            if (Check(password))
+            {
+                retrunValue = true;
+            }
+            else
+            {
+                retrunValue = false;
+            }
+            return retrunValue;
+        }
         private bool Check(string password)
         {
-            return false;
+            if (password == "password")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

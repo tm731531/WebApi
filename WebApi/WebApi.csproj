@@ -16,9 +16,5 @@
     <ProjectReference Include="..\WebApi.Service\WebApi.Service.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\ViewModel\" />
-  </ItemGroup>
-
 
 </Project>

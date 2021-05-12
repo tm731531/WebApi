@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApi.Model.Dto;
+using WebApi.Model.ViewModel;
 using WebApi.Service;
 
 namespace WebApi.Controllers
@@ -18,12 +14,31 @@ namespace WebApi.Controllers
 
         // POST: api/Account
         [HttpPost]
-        public void Post([FromBody]CreateAccountDto value)
+        public void Post([FromBody]CreateAccountInputVM value)
         {
 
-            accountService.CreateAccount(value);
+            if (ValidationAccountData(value)) {
+                
+                accountService.CreateAccount(value.email, value.phone, value.password);
+
+            }
         }
 
+        private bool ValidationAccountData(CreateAccountInputVM data)
+        {
 
+            var tempData = new CreateAccountDto(data);
+
+            if (accountService.CheckPassword(tempData.password) &&
+                accountService.CheckPhone(tempData.phone) &&
+                accountService.CheckEmail(tempData.email))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
