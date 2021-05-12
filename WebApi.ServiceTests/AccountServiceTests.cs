@@ -11,20 +11,37 @@ namespace WebApi.Service.Tests
     {
         [TestMethod()]
 
-        [Owner("Taco")]
 
         [TestCategory("CreateAccount")]
 
-        public void CreateAccountTest()
+        public void CreateAccountPassTest()
         {
             // arrange
-            var data = new CreateAccountDto() { password="test", email="test@gmail", phone="0000000000" };
+            var data = new CreateAccountDto()
+            { password = "test", email = "test@gmail", phone = "0000000000" };
 
             // act
             var service = new AccountService();
 
             // assert
             Assert.AreEqual(true, service.CreateAccount(data));
+        }
+
+        [TestMethod()]
+
+        [TestCategory("CreateAccount")]
+
+        public void CreateAccountNotPassTest()
+        {
+            // arrange
+            var data = new CreateAccountDto()
+            { password = "test", email = "test@gmail", phone = "9000000000" };
+
+            // act
+            var service = new AccountService();
+
+            // assert
+            Assert.AreEqual(false, service.CreateAccount(data));
         }
     }
 }
