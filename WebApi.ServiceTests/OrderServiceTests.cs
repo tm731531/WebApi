@@ -32,21 +32,21 @@ namespace WebApi.Service.Tests
 
         [TestMethod()]
         [DataRow(50, 50)]
-        public void CheckTotalPriceEqualEachItemsTotalPassTest(int totalPrice, int sunm)
+        public void CheckTotalPriceEqualEachItemsTotalPassTest(int totalPrice, int sum)
         {
             OrderService service = new OrderService();
 
-            var result = service.CheckTotalPriceEqualEachItemsTotal(totalPrice, sunm);
+            var result = service.CheckTotalPriceEqualEachItemsTotal(totalPrice, sum);
 
             Assert.AreEqual(true, result);
         }
         [TestMethod()]
         [DataRow(50,25)]
-        public void CheckTotalPriceEqualEachItemsTotalNotPassTest(int totalPrice, int sunm)
+        public void CheckTotalPriceEqualEachItemsTotalNotPassTest(int totalPrice, int sum)
         {
             OrderService service = new OrderService();
 
-            var result = service.CheckTotalPriceEqualEachItemsTotal(totalPrice, sunm);
+            var result = service.CheckTotalPriceEqualEachItemsTotal(totalPrice, sum);
 
             Assert.AreEqual(false, result);
         }
