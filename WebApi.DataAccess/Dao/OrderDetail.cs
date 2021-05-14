@@ -6,7 +6,7 @@ using System.Text;
 namespace WebApi.DataAccess.Dao
 {
     [Table("order_detail")]
-    class OrderDetail
+    public class OrderDetail
     {
         [Column("id")]
         public int id { get; set; }
