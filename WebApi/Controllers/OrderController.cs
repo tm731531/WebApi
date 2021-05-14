@@ -16,8 +16,8 @@ namespace WebApi.Controllers
     public class OrderController : ControllerBase
     {
 
-        // GET: api/Order/5
-        [HttpGet("{id}", Name = "Get")]
+        // GET: api/Order/Tom
+        [HttpGet("{buyer}", Name = "Get")]
         public JsonResult Get(string buyer)
         {
             CreateOrderDto createOrderDto = new CreateOrderDto();
