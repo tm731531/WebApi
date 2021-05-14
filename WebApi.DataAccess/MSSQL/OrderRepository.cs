@@ -21,7 +21,7 @@ namespace WebApi.DataAccess.MSSQL
 
 
 
-        public int CreateOrder(string buyer, int total_price, string discount)
+        public int CreateOrder(string buyer, int total_price, int discount)
         {
 
 

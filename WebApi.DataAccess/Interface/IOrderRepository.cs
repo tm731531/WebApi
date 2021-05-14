@@ -9,7 +9,7 @@ namespace WebApi.DataAccess.Interface
     public interface IOrderRepository
     {
         public int CreateOrder( string buyer
-            , int total_price, string discount);
+            , int total_price, int discount);
         public IEnumerable<Order> GetOrder( string buyer);
     }
 }

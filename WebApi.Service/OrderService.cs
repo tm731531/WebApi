@@ -9,7 +9,7 @@ using WebApi.Service.Model;
 
 namespace WebApi.Service
 {
-    class OrderService
+    public class OrderService
     {
         MainRepository mainRepository = new MainRepository();
         public bool CreateOrder(OrderBO orderBO)
@@ -63,5 +63,20 @@ namespace WebApi.Service
             return orderBO;
         }
 
+        public bool CheckTotalPriceEqualEachItemsTotal(int totalPrice, int sumItemsPrice)
+        {
+            bool returnValue = false;
+            if (totalPrice== sumItemsPrice) { returnValue = true; }
+            else { }
+            return returnValue;
+        }
+
+        public bool CheckTotalPriceMustMoreThanDiscount(int totalPrice, int discount)
+        {
+            bool returnValue = false;
+            if (totalPrice > discount){ returnValue = true; }
+            else { }
+            return returnValue;
+        }
     }
 }

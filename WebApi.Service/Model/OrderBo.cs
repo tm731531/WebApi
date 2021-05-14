@@ -12,7 +12,7 @@ namespace WebApi.Service.Model
         public List<OrderBO> returnBO;
         public string buyer { get; set; }
         public int totalPrice { get; set; }
-        public string discount { get; set; }
+        public int discount { get; set; }
         public List<OrderDetailBO> orderDetail { get; set; }
 
         internal void Combine(IEnumerable<Order> orders, IEnumerable<OrderDetail> detailData)

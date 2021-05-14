@@ -22,6 +22,6 @@ namespace WebApi.DataAccess.Dao
 
 
         [Column("discount")]
-        public string discount { get; set; }
+        public int discount { get; set; }
     }
 }
