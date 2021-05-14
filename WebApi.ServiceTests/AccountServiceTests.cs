@@ -10,7 +10,7 @@ namespace WebApi.Service.Tests
     public class AccountServiceTests
     {
 
-        AccountService service = new AccountService();
+       
         [TestMethod()]
 
 
@@ -19,6 +19,7 @@ namespace WebApi.Service.Tests
         public void CreateAccountPassTest(string email, string phone,string password)
         {
             // arrange
+            AccountService service = new AccountService();
             // 可以用BO
             // act
             var result = service.CreateAccount(email, phone, password);
@@ -35,6 +36,7 @@ namespace WebApi.Service.Tests
         public void CreateAccountNotPassTest(string email, string phone, string password)
         {
             // arrange
+            AccountService service = new AccountService();
             // act
             var result = service.CreateAccount(email, phone, password);
 
@@ -46,6 +48,8 @@ namespace WebApi.Service.Tests
         [DataRow("test@gmail.com")]
         public void CheckEmailPassTest(string email)
         {
+            AccountService service = new AccountService();
+
             var result = service.CheckEmail(email);
 
             Assert.AreEqual(true, result);
@@ -54,6 +58,7 @@ namespace WebApi.Service.Tests
         [DataRow("test123456789123456789@gmail.com")]
         public void CheckEmailNotPassTest(string email)
         {
+            AccountService service = new AccountService();
 
             var result = service.CheckEmail(email);
             Assert.AreEqual(false, result);
@@ -63,6 +68,8 @@ namespace WebApi.Service.Tests
         [DataRow("0000000000")]
         public void CheckPhonePassTest(string phone)
         {
+            AccountService service = new AccountService();
+
             var result = service.CheckPhone(phone);
             Assert.AreEqual(true, result);
         }
@@ -70,6 +77,8 @@ namespace WebApi.Service.Tests
         [DataRow("1000000000")]
         public void CheckPhoneNotPassTest(string phone)
         {
+            AccountService service = new AccountService();
+
             var result = service.CheckPhone(phone);
             Assert.AreEqual(false, result);
         }
@@ -78,15 +87,20 @@ namespace WebApi.Service.Tests
         [DataRow("password")]
         public void CheckPasswordPassTest(string password)
         {
+            AccountService service = new AccountService();
 
             var result = service.CheckPassword(password);
+
             Assert.AreEqual(true, result);
         }
         [TestMethod()]
         [DataRow("password1")]
         public void CheckPasswordNotPassTest(string password)
         {
+            AccountService service = new AccountService();
+
             var result = service.CheckPassword(password);
+
             Assert.AreEqual(false, result);
         }
     }

@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApi.DataAccess;
+
 namespace WebApi.Service
 {
     public class AccountService
     {
+        MainRepository mainRepository = new MainRepository();
 
         public bool CreateAccount(string email, string phone, string password)
         {
 
             bool retrunValue = true;
-            //帶資料 去創帳號了
             try
             {
+                mainRepository.UserRepository.CreateAccount(email, phone, password);
+
+
             }
             catch (Exception)
             {
@@ -25,6 +30,30 @@ namespace WebApi.Service
             }
             return retrunValue;
         }
+
+        public bool UpdateAccount(string email, string phone, string password)
+        {
+
+            bool retrunValue = true;
+            try
+            {
+                mainRepository.UserRepository.UpdateAccount(email, phone, password);
+
+            }
+            catch (Exception)
+            {
+
+                retrunValue = false;
+            }
+            if (email == "false")
+            {
+                retrunValue = false;
+            }
+            return retrunValue;
+        }
+
+
+        #region Check area
 
         public bool CheckEmail(string email)
         {
@@ -67,6 +96,9 @@ namespace WebApi.Service
             }
             return retrunValue;
         }
+
+        #endregion
+        #region private area
         private bool Check(string password)
         {
             if (password == "password")
@@ -78,5 +110,6 @@ namespace WebApi.Service
                 return false;
             }
         }
+        #endregion
     }
 }

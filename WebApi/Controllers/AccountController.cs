@@ -14,16 +14,36 @@ namespace WebApi.Controllers
 
         // POST: api/Account
         [HttpPost]
-        public void Post([FromBody]CreateAccountInputVM value)
+        public JsonResult Post([FromBody]CreateAccountInputVM value)
         {
+            var returnValue = false;
 
-            if (ValidationAccountData(value)) {
-                
-                accountService.CreateAccount(value.email, value.phone, value.password);
+            if (ValidationAccountData(value))
+            {
+
+                returnValue= accountService.CreateAccount(value.email, value.phone, value.password);
 
             }
+            return new JsonResult(new { result = returnValue });
+        } 
+        // Put: api/Account
+        [HttpPut]
+        public JsonResult Put([FromBody]CreateAccountInputVM value)
+        {
+            var returnValue = false;
+
+            if (ValidationAccountData(value))
+            {
+
+                returnValue= accountService.CreateAccount(value.email, value.phone, value.password);
+
+            }
+            return new JsonResult(new { result = returnValue });
         }
 
+
+
+        #region private area
         private bool ValidationAccountData(CreateAccountInputVM data)
         {
 
@@ -40,5 +60,6 @@ namespace WebApi.Controllers
                 return false;
             }
         }
+        #endregion
     }
 }
