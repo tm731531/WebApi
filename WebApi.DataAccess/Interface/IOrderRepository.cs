@@ -11,5 +11,6 @@ namespace WebApi.DataAccess.Interface
         public int CreateOrder( string buyer
             , int total_price, int discount);
         public IEnumerable<Order> GetOrder( string buyer);
+        public IEnumerable<Order> GetAllOrder();
     }
 }

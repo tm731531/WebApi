@@ -30,6 +30,12 @@ namespace WebApi.Model.Dto
 
         }
 
+        internal object CreateOrderMonthlyReportOutVM(OrderBO orderBO)
+        {
+            
+            return new { month=DateTime.Now, data= orderBO.orderDetail.GroupBy(x => x.item) } ;
+        }
+
         internal object CreateOrderOutVM(OrderBO orderBO)
         {
             return orderBO;

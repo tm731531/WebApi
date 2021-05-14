@@ -44,7 +44,7 @@ namespace WebApi.DataAccess.MSSQL
                 {
 
 
-                    returnValue= conn.QuerySingle<int>(sql, new
+                    returnValue = conn.QuerySingle<int>(sql, new
                     {
                         buyer = buyer,
                         total_price = total_price,
@@ -63,14 +63,38 @@ namespace WebApi.DataAccess.MSSQL
             {
 
                 var sql = @" SELECT * 
-                             FROM [dbo].[order]
-                             WHERE [buyer] = @buyer";
+                             FROM [dbo].[order]";
+
+
+                if (buyer != string.Empty)
+                {
+                    sql += " WHERE [buyer] = @buyer";
+                };
+
                 using (var conn = _DatabaseConnection.Create())
                 {
                     return conn.Query<Order>(sql, new
                     {
                         buyer = buyer
                     });
+                }
+
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public IEnumerable<Order> GetAllOrder()
+        {
+            try
+            {
+
+                var sql = @" SELECT * 
+                             FROM [dbo].[order]";
+                using (var conn = _DatabaseConnection.Create())
+                {
+                    return conn.Query<Order>(sql);
                 }
 
             }
