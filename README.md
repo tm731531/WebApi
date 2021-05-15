@@ -63,7 +63,9 @@ USER誰買 買了那些商品 價格是多少 有沒有折扣
         public bool AddSalary(double amount)
         {
            bool returnValue =false;
+           
            _salary=_salary+amount;
+           
            return returnValue;
         }
         
