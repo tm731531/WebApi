@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApi.Model.ViewModel;
 using WebApi.Service.Model;
 
-namespace WebApi.Model.Dto
+namespace WebApi.Area.OrderControllers.Model
 {
     public class CreateOrderDto
     {

@@ -4,14 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Model.Dto;
-using WebApi.Model.ViewModel;
+using WebApi.Area.OrderControllers.Model;
 using WebApi.Service;
 using WebApi.Service.Model;
 
-namespace WebApi.Controllers
+namespace WebApi.Area.OrderControllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Count/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {

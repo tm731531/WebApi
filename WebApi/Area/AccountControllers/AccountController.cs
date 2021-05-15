@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApi.Model.Dto;
-using WebApi.Model.ViewModel;
+using WebApi.Area.AccountControllers.Model;
 using WebApi.Service;
 
-namespace WebApi.Controllers
+namespace WebApi.Area.AccountControllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Account/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {

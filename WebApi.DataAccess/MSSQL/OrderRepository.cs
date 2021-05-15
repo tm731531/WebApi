@@ -85,23 +85,5 @@ namespace WebApi.DataAccess.MSSQL
                 return null;
             }
         }
-        public IEnumerable<Order> GetAllOrder()
-        {
-            try
-            {
-
-                var sql = @" SELECT * 
-                             FROM [dbo].[order]";
-                using (var conn = _DatabaseConnection.Create())
-                {
-                    return conn.Query<Order>(sql);
-                }
-
-            }
-            catch
-            {
-                return null;
-            }
-        }
     }
 }

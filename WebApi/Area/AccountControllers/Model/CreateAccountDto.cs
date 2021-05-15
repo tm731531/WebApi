@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApi.Model.ViewModel;
 
-namespace WebApi.Model.Dto
+namespace WebApi.Area.AccountControllers.Model
+
 {
     public class CreateAccountDto
     {
