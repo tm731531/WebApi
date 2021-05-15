@@ -45,8 +45,9 @@ USER誰買 買了那些商品 價格是多少 有沒有折扣
 |各種命名|所在層級|規則|
 |-------|--------|----|
 |名詞|Class|upper camel case|
-|名詞|私有參數|lower camel case|
+|" _ " +名詞|私有參數|" _ "+lower camel case|
 |名詞|公有參數|upper camel case|
+|名詞|函數內部參數|lower camel case|
 |動詞+名詞|Function|upper camel case ，定義是 這個Function是為了"什麼"做"什麼事情"|
 |I+名詞|Interface|I+upper camel case ，切分定義是 這個介面要攏統的告訴外面是"什麼"跟"能做什麼事情 而這個事情是可抽換的"|
 
