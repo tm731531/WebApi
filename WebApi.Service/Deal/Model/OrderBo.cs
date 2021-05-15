@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using WebApi.DataAccess.Dao;
 
-namespace WebApi.Service.Model
+namespace WebApi.Service.Deal.Model
 {
     public class OrderBO
     {

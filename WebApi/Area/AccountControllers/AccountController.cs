@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApi.Area.AccountControllers.Model;
 using WebApi.Service;
+using WebApi.Service.User;
 
 namespace WebApi.Area.AccountControllers
 {

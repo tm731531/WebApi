@@ -3,8 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApi.Service.User;
 
-namespace WebApi.Service.Tests
+namespace WebApi.Service.Tests.User
 {
     [TestClass()]
     public class AccountServiceTests

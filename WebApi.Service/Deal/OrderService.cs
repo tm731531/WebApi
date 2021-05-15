@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Transactions;
 using WebApi.DataAccess;
-
-using WebApi.Service.Model;
-
-namespace WebApi.Service
+using WebApi.Service.Deal.Model;
+namespace WebApi.Service.Deal
 {
     public class OrderService
     {

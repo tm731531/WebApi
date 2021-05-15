@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebApi.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebApi.Service.Deal;
 
-namespace WebApi.Service.Tests
+namespace WebApi.Service.Tests.Deal
 {
     [TestClass()]
     public class OrderServiceTests

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApi.Service.Model;
+using WebApi.Service.Deal.Model;
 
 namespace WebApi.Area.OrderControllers.Model
 {

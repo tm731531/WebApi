@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Area.OrderControllers.Model;
 using WebApi.Service;
-using WebApi.Service.Model;
+using WebApi.Service.Deal;
+using WebApi.Service.Deal.Model;
 
 namespace WebApi.Area.OrderControllers
 {

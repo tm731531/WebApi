@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using WebApi.DataAccess;
 
-namespace WebApi.Service
+namespace WebApi.Service.User
 {
     public class AccountService
     {
